@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: api-spring-teste
+  labels:
+    name: api-spring-teste
+spec:
+  containers:
+  - name: api-spring-teste
+    image: gianmilani/app-spring-test:v1
+    resources:
+      limits:
+        memory: "500Mi"
+        cpu: "500m"
+    ports:
+      - containerPort: 8080

@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: apispringteste
+  labels:
+    app: apispringteste
+spec:
+  selector:
+    matchLabels:
+      app: apispringteste
+  replicas: 5
+  template:
+    metadata:
+      labels:
+        app: apispringteste
+    spec:
+      containers:
+      - name: apispringteste
+        image: "gianmilani/app-spring-test:v1"
