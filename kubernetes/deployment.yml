@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: spring-api-teste
+  labels:
+    app: spring-api-teste
+spec:
+  selector:
+    matchLabels:
+      app: spring-api-teste
+  replicas: 5
+  template:
+    metadata:
+      labels:
+        app: spring-api-teste
+    spec:
+      containers:
+      - name: spring-api-teste
+        image: "gianmilani/app-spring-test:v2"
