@@ -16,4 +16,4 @@ spec:
     spec:
       containers:
       - name: spring-api-teste
-        image: "gianmilani/app-spring-test:v2"
+        image: "gianmilani/app-spring-test:v1"
