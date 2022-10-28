@@ -5,7 +5,7 @@ metadata:
 spec:
   selector:
     app: spring-api-teste
-  type: ClusterIP
+  type: LoadBalancer
   ports:
   - name: spring-api-teste-service
     port: 80
