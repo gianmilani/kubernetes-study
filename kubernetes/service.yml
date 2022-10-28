@@ -1,13 +1,12 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: spring-api-teste-service
+  name: spring-api-service
 spec:
   selector:
-    app: spring-api-teste
-  type: LoadBalancer
+    app: spring-api-container
+  type: ClusterIP
   ports:
-  - name: spring-api-teste-service
-    port: 80
-    targetPort: 8080
+  - name: spring-api-service
+    port: 8080
     protocol: TCP
