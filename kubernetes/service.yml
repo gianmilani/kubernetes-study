@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: spring-api-teste-service
+spec:
+  selector:
+    app: spring-api-teste
+  type: ClusterIP
+  ports:
+  - name: spring-api-teste-service
+    port: 80
+    targetPort: 8080
+    protocol: TCP
