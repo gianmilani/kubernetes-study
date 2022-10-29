@@ -1,0 +1,6 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: api-spring-env
+data:
+  TEST_USER_AGE: "64"

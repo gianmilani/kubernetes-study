@@ -21,7 +21,10 @@ spec:
           - name: TEST_USER_NAME
             value: "Joseph Climber"
           - name : TEST_USER_AGE
-            value: "77"
+            valueFrom:
+              configMapKeyRef:
+                name: api-spring-env
+                key: TEST_USER_AGE
           - name: LIST_FRUITS
             value: "orange, banana, apple"
           - name: MY_SECRET
