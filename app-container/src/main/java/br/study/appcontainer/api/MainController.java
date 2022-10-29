@@ -8,11 +8,19 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class MainController {
 
-    @Value("${user.name}")
+    @Value("${test.user.name}")
     private String userName;
 
-    @Value("${user.age}")
+    @Value("${test.user.age}")
     private String userAge;
+
+    @Value("${test.list}")
+    private String listFruits;
+
+    @Value("${test.secret}")
+    private String verySecretAny;
+
+
 
     @GetMapping
     public String index() {
@@ -25,12 +33,27 @@ public class MainController {
     }
 
     @GetMapping("/message/{name}")
-    public String getName(@PathVariable String name){
+    public String getName(@PathVariable String name) {
         return "Welcome %s !!!!".formatted(name);
     }
 
     @GetMapping("/env")
-    public  String getEnv(){
+    public String getEnv() {
         return "User : " + userName + " | Age : " + userAge;
     }
+
+    @GetMapping("/my-list")
+    public String getList(){
+        return listFruits;
+    }
+
+    @GetMapping("/my-secret")
+    public String getVerySecret(){
+        return verySecretAny;
+    }
+
+
+
+
+
 }
