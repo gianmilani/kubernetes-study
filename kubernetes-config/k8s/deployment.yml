@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: spring-api
+  labels:
+    app: spring-api
+spec:
+  selector:
+    matchLabels:
+      app: spring-api-container
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: spring-api-container
+    spec:
+      containers:
+        - name: spring-api-container
+          image: "gianmilani/app-spring-test:v4"
+          env:
+          - name: TEST_USER_NAME
+            value: "Joseph Climber"
+          - name : TEST_USER_AGE
+            value: "77"
+          - name: LIST_FRUITS
+            value: "orange, banana, apple"
+          - name: MY_SECRET
+            value: "1234"
