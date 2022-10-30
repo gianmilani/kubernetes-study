@@ -25,8 +25,8 @@ spec:
               configMapKeyRef:
                 name: api-spring-env
                 key: TEST_USER_AGE
-          - name: MY_SECRET
-            value: "1234"
           envFrom:
             - configMapRef:
                 name: configmap-list-fruit
+            - secretRef:
+                name: app-spring-secret
