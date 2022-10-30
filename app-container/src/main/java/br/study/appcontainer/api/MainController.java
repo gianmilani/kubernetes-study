@@ -20,7 +20,11 @@ public class MainController {
     @Value("${test.secret}")
     private String verySecretAny;
 
+    @Value("${test.server}")
+    private String serverInfo;
 
+    @Value("${test.port}")
+    private String portInfo;
 
     @GetMapping
     public String index() {
@@ -51,6 +55,9 @@ public class MainController {
     public String getVerySecret(){
         return verySecretAny;
     }
+
+    @GetMapping("/server-info")
+    public String getServerInfo() { return serverInfo +":"+ portInfo; }
 
 
 
