@@ -45,7 +45,7 @@ public class MainController {
 
         long timeNow = Instant.now().getEpochSecond() - timeStart;
 
-        if(timeNow > 30) throw new RuntimeException("A error occured");
+        if(timeNow < 15) throw new RuntimeException("A error occured");
         return "Ok";
     }
 
