@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: spring-api-container
-          image: "gianmilani/app-spring-test:v5.2"
+          image: "gianmilani/app-spring-test:v5.3"
           livenessProbe:
             httpGet:
               path: /health-prob
@@ -25,6 +25,14 @@ spec:
             failureThreshold: 3
             timeoutSeconds: 1
             successThreshold: 1
+            initialDelaySeconds: 50
+          readinessProbe:
+            httpGet:
+              path: /health-prob
+              port: 8080
+            periodSeconds: 3
+            failureThreshold: 1
+            initialDelaySeconds: 20
           env:
           - name: TEST_USER_NAME
             value: "Joseph Climber"
