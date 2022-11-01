@@ -17,6 +17,12 @@ spec:
       containers:
         - name: spring-api-container
           image: "gianmilani/app-spring-test:v5.3"
+          startupProbe:
+            httpGet:
+              path: /health-prob
+              port: 8080
+            periodSeconds: 3
+            failureThreshold: 30
           livenessProbe:
             httpGet:
               path: /health-prob
