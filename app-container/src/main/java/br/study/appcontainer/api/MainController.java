@@ -5,9 +5,13 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.time.Instant;
+import java.time.LocalTime;
+
 @RestController
 public class MainController {
 
+    private long timeStart = Instant.now().getEpochSecond();
     @Value("${test.user.name}")
     private String userName;
 
@@ -34,6 +38,15 @@ public class MainController {
     @GetMapping("/health")
     public String healthCheck() {
         return "OK";
+    }
+
+    @GetMapping("/health-prob")
+    public String healthCheckProb() {
+
+        long timeNow = Instant.now().getEpochSecond() - timeStart;
+
+        if(timeNow > 30) throw new RuntimeException("A error occured");
+        return "Ok";
     }
 
     @GetMapping("/message/{name}")
