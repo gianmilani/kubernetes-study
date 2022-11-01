@@ -16,10 +16,14 @@ spec:
     spec:
       containers:
         - name: spring-api-container
-          image: "gianmilani/app-spring-test:v4"
+          image: "gianmilani/app-spring-test:v5.1"
           env:
           - name: TEST_USER_NAME
             value: "Joseph Climber"
+          # - name: ANY_PORT
+          #   value: "2727"
+          # - name: ANY_SERVER
+          #   value: "9.9.9.9"
           - name : TEST_USER_AGE
             valueFrom:
               configMapKeyRef:
@@ -30,3 +34,16 @@ spec:
                 name: configmap-list-fruit
             - secretRef:
                 name: app-spring-secret
+            # - configMapRef:
+            #     name: configmap-server-info
+          volumeMounts:
+            - mountPath: "/usr/app/config"
+              name: config
+              readOnly: true
+      volumes:
+        - name: config
+          configMap:
+            name: configmap-server-info
+            items:
+            - key: info
+              path: ".env"  
