@@ -17,6 +17,13 @@ spec:
       containers:
         - name: spring-api-container
           image: "gianmilani/app-spring-test:v5.3"
+          resources:
+            requests:
+              cpu: 100m
+              memory: 50Mi
+            limits:
+              cpu: 256m
+              memory: 100Mi
           startupProbe:
             httpGet:
               path: /health-prob
