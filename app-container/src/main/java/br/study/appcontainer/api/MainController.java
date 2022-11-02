@@ -60,7 +60,8 @@ public class MainController {
     }
 
     @GetMapping("/my-list")
-    public String getList(){
+    public String getList() throws InterruptedException {
+       Thread.sleep(3000);
         return listFruits;
     }
 
