@@ -16,4 +16,4 @@ spec:
     spec:
       containers:
       - name: app-demo
-        image: gianmilani/kube-demo:v1
+        image: gianmilani/kube-demo:v2

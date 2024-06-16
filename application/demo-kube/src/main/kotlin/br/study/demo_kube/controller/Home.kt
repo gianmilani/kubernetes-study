@@ -9,5 +9,5 @@ import org.springframework.web.bind.annotation.RestController
 class Home {
 
     @GetMapping
-    fun welcome() = "Hello, welcome"
+    fun welcome() = "Hello, welcome v2"
 }
