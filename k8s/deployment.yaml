@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app-demo
+  labels:
+    app: app-demo
+spec:
+  selector:
+    matchLabels:
+      app: app-demo
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: app-demo
+    spec:
+      containers:
+      - name: app-demo
+        image: gianmilani/kube-demo:v2
