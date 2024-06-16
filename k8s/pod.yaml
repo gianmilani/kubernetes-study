@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: app-demo
+  labels:
+    name: app-demo
+spec:
+  containers:
+  - name: app-demo
+    image: gianmilani/kube-demo:v1
