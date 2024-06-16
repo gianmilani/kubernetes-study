@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: app-demo
+  labels:
+    app: app-demo
+spec:
+  selector:
+    matchLabels:
+      app: app-demo
+  replicas: 10
+  template:
+    metadata:
+      labels:
+        app: app-demo
+    spec:
+      containers:
+      - name: app-demo
+        image: gianmilani/kube-demo:v1
