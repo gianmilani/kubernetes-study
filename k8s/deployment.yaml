@@ -16,4 +16,9 @@ spec:
     spec:
       containers:
       - name: app-demo
-        image: gianmilani/kube-demo:v2
+        image: gianmilani/kube-demo:v3
+        env:
+          - name: APPLICATION_NAME
+            value: "App Demo Test Kubernetes"
+          - name: APPLICATION_INFO
+            value: "Application to testing in kubernetes"

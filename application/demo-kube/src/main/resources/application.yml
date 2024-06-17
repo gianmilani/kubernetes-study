@@ -5,3 +5,7 @@ spring:
     banner-mode: "off"
 server:
   port: 8082
+
+app:
+  name: ${APPLICATION_NAME:no_name}
+  info: ${APPLICATION_INFO:no_info}
