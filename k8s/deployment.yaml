@@ -17,14 +17,17 @@ spec:
       containers:
       - name: app-demo
         image: gianmilani/kube-demo:v3
-        env:
-          - name: APPLICATION_NAME
-            valueFrom:
-              configMapKeyRef:
-                name: app-demo-env
-                key: APPLICATION_NAME
-          - name: APPLICATION_INFO
-            valueFrom:
-              configMapKeyRef:
-                name: app-demo-env
-                key: APPLICATION_INFO
+        envFrom:
+          - configMapRef:
+              name: app-demo-env
+        # env:
+        #   - name: APPLICATION_NAME
+        #     valueFrom:
+        #       configMapKeyRef:
+        #         name: app-demo-env
+        #         key: APPLICATION_NAME
+        #   - name: APPLICATION_INFO
+        #     valueFrom:
+        #       configMapKeyRef:
+        #         name: app-demo-env
+        #         key: APPLICATION_INFO
