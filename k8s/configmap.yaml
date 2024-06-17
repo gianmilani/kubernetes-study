@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: app-demo-env
+data:
+  APPLICATION_NAME: "App Demo Test Kubernetes"
+  APPLICATION_INFO: "Application to testing in kubernetes"
