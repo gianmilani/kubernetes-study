@@ -16,10 +16,12 @@ spec:
     spec:
       containers:
       - name: app-demo
-        image: gianmilani/kube-demo:v3
+        image: gianmilani/kube-demo:v4
         envFrom:
           - configMapRef:
               name: app-demo-env
+          - secretRef:
+              name: app-demo-secret
         # env:
         #   - name: APPLICATION_NAME
         #     valueFrom:

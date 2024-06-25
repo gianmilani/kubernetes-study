@@ -9,3 +9,4 @@ server:
 app:
   name: ${APPLICATION_NAME:no_name}
   info: ${APPLICATION_INFO:no_info}
+  test_sc: ${INFO_SEC:no_info_Sec}
