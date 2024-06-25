@@ -16,7 +16,15 @@ spec:
     spec:
       containers:
       - name: app-demo
-        image: gianmilani/kube-demo:v4
+        image: gianmilani/kube-demo:v5
+        livenessProbe:
+          httpGet:
+            path: /healthCheck
+            port: 8000
+          periodSeconds: 10
+          failureThreshold: 3
+          timeoutSeconds: 1
+          successThreshold: 1
         envFrom:
           - configMapRef:
               name: app-demo-env
