@@ -16,12 +16,12 @@ spec:
     spec:
       containers:
       - name: app-demo
-        image: gianmilani/kube-demo:v5
+        image: gianmilani/kube-demo:v6
         livenessProbe:
           httpGet:
             path: /healthCheck
-            port: 8000
-          periodSeconds: 10
+            port: 8082
+          periodSeconds: 30
           failureThreshold: 3
           timeoutSeconds: 1
           successThreshold: 1
